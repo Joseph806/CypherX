@@ -74,7 +74,7 @@ await reply(`+${userToAdd.split('@')[0]} is already a sudo user.`);
 },
   {
   command: ['alwaysonline'],
-  operate: async ({ Cypher, m, reply, args, prefix, command, isCreator, mess, db, botNumber, saveDatabase }) => {
+  operate: async ({ Joe, m, reply, args, prefix, command, isCreator, mess, db, botNumber, saveDatabase }) => {
     if (!isCreator) return reply(mess.owner);
     if (args.length < 1) return reply(`Example: ${prefix + command} on/off`);
 
@@ -232,7 +232,7 @@ await reply(`+${userToAdd.split('@')[0]} is already a sudo user.`);
       return reply(`Invalid option; type *${prefix}autoreact* to see available options!`);
     }
 
-    db.settings.autoreact = option === "off" ? false : option;
+    db.settings.autoreact = option === "on" ? true : option;
 
     await saveDatabase();
 
